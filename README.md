@@ -17,3 +17,10 @@ Docker-3 homework
 Docker-4 homework
 1)Разобрались с сетями и docker-compose
 2)Чтобы изменить имя проекта нужно запустить docker-compose с флагом -p или уже можно указать project_name рпямо в yaml
+
+Monitoring homework
+
+Подняли контейнер с prometheus и reddit
+Не понял почему на странице 32 ui_health=0  и как вообще это работает.
+Собрали хостовые метрики с помощью node exporter
+Ссылка на образы docker.io/opopovich85
