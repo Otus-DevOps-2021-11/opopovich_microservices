@@ -21,6 +21,9 @@ Docker-4 homework
 Monitoring homework
 
 Подняли контейнер с prometheus и reddit
+
 Не понял почему на странице 32 ui_health=0  и как вообще это работает.
+
 Собрали хостовые метрики с помощью node exporter
+
 Ссылка на образы docker.io/opopovich85
