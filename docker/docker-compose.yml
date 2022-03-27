@@ -8,20 +8,42 @@ services:
       - back_net
   ui:
     build: ../src/ui
-    image: ${USERNAME}/ui:${UI_VERS}
+    image: ${USERNAME}/ui:${TAG}
     ports:
       - ${APP_PORT}:9292/tcp
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: localhost:24224
+        tag: service.ui
+    environment:
+      - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
     networks:
       - front_net
   post:
     build: ../src/post-py
-    image: ${USERNAME}/post:${POST_VERS}
+    image: ${USERNAME}/post:${TAG}
+    environment:
+      - POST_DATABASE_HOST=post_db
+      - POST_DATABASE=posts
+      - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
+    depends_on:
+      - post_db
+    ports:
+      - "5000:5000"
+    logging:
+       driver: "fluentd"
+       options:
+         fluentd-address: localhost:24224
+         tag: service.post
     networks:
       - front_net
       - back_net
   comment:
     build: ../src/comment
-    image: ${USERNAME}/comment:${COMM_VERS}
+    image: ${USERNAME}/comment:${TAG}
+    environment:
+      - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
     networks:
       - front_net
       - back_net

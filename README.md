@@ -24,3 +24,8 @@ Monitoring homework
 Не понял почему на странице 32 ui_health=0  и как вообще это работает.
 Собрали хостовые метрики с помощью node exporter
 Ссылка на образы docker.io/opopovich85
+
+Logging homework
+
+- Не удалось поработать с Kibana т.к fluentd не передает данные в эластик и ошибка не понятна
+- Zipkin работает
