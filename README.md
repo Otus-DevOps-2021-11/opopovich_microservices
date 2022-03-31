@@ -24,3 +24,16 @@ Monitoring homework
 Не понял почему на странице 32 ui_health=0  и как вообще это работает.
 Собрали хостовые метрики с помощью node exporter
 Ссылка на образы docker.io/opopovich85
+
+Logging homework
+
+- Не удалось поработать с Kibana т.к fluentd не передает данные в эластик и ошибка не понятна
+- Zipkin работает
+
+Kubernetes-1 homework
+
+- Долго пытался понять почему virtualbox nat ip одинаковый для всех нод
+
+- Понял что нужно поднимать кластер с --apiserver-advertise-address
+
+- Запустил кластер и протестировал его работу
